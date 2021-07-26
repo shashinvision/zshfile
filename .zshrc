@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/felipe/.oh-my-zsh"
+export ZSH="/Users/felipemancillareyes/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -50,9 +50,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -76,11 +78,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git)
-#plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-plugins=(
-git common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting
-)
+#plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,25 +108,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# #---------- Personalizado -----------
-#pfetch
-alias apagar="echo Apagando... && sleep 3s && shutdown now"
-alias actualizar="sudo apt update && sudo apt upgrade && echo Actualizando snap... && sudo snap refresh"
-alias liberarram="echo liberado ram && sleep 3s &&  sudo sync && sudo sysctl -w vm.drop_caches=3 && free -h"
-#alias axiadrive="/usr/bin/google-drive-ocamlfuse /home/felipe/DriveAxia"
-alias iniciarxampp="sudo /opt/lampp/lampp start"
-alias detenerxampp="sudo /opt/lampp/lampp stop"
-alias indapdocker="cd /home/felipe/Dockers/base && docker-compose up -d"
-alias indapdetenerdocker="cd /home/felipe/Dockers/base && docker-compose stop"
-alias indapdockerforzado="cd /home/felipe/Dockers/base && docker-compose up --force-recreate -d"
-alias indapbaseweb="docker exec -it $(docker ps | grep web | awk -F'0.0.0.0:80->80/tcp' {'print $2'} | sed 's/\ //g') bash"
-alias indaplog="cd /home/felipe/Dockers/base && tail -f -n 100 logs/*"
-alias copiarqa="cp /home/felipe/Dockers/config_qa.php /home/felipe/Dockers/base/sistemaunico/webdir/ && mv /home/felipe/Dockers/base/sistemaunico/webdir/config_qa.php /home/felipe/Dockers/base/sistemaunico/webdir/config.php"
-alias copiarrelease="cp /home/felipe/Dockers/config_conrelease.php /home/felipe/Dockers/base/sistemaunico/webdir/ && mv /home/felipe/Dockers/base/sistemaunico/webdir/config_conrelease.php /home/felipe/Dockers/base/sistemaunico/webdir/config.php"
-alias copiardesarrollo="cp /home/felipe/Dockers/config.php /home/felipe/Dockers/base/sistemaunico/webdir/ && mv /home/felipe/Dockers/base/sistemaunico/webdir/config.php /home/felipe/Dockers/base/sistemaunico/webdir/config.php"
-alias copiarproduccion="cp /home/felipe/Dockers/config_produccion.php /home/felipe/Dockers/base/sistemaunico/webdir/ && mv /home/felipe/Dockers/base/sistemaunico/webdir/config_produccion.php /home/felipe/Docker/webdir/config.php"
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
+alias copiarDesarrollo="cp /Users/felipemancillareyes/Dockers/config.php /Users/felipemancillareyes/Dockers/base/sistemaunico/webdir"
+alias copiarQA="cp /Users/felipemancillareyes/Dockers/config_qa.php /Users/felipemancillareyes/Dockers/base/sistemaunico/webdir"
+alias copiarRelease="cp /Users/felipemancillareyes/Dockers/config_conrelease.php /Users/felipemancillareyes/Dockers/base/sistemaunico/webdir"
+alias indapDockerForzado="cd /Users/felipemancillareyes/Dockers/base && docker-compose up --force-recreate -d"
+alias indapLog="cd /Users/felipemancillareyes/Dockers/base && tail -f -n 100 logs/*"
+alias indapIniciarDocker="docker start base_web_1 base_vsftpd_1"
+alias indapDetenerDocker="docker stop base_web_1 base_vsftpd_1"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /Users/felipemancillareyes/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/felipemancillareyes/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
