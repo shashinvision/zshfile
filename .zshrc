@@ -115,6 +115,7 @@ export LANGUAGE="en_US.UTF-8"
 
 # Para Bruna AltumLab
 
+alias brumaCleanCacheConfig="cd ~/Dockers/BrunaPOCsV2/app && php artisan cache:clear && php artisan config:clear"
 alias brumaDown="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-down.sh"
 alias brumaUp="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-up.sh"
 alias brumaBuild="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-build.sh"
