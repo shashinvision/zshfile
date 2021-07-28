@@ -118,6 +118,7 @@ export LANGUAGE="en_US.UTF-8"
 alias brumaDown="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-down.sh"
 alias brumaUp="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-up.sh"
 alias brumaBuild="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-build.sh"
+alias brumaPs="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-ps.sh"
 alias brumaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
 alias brumaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
 
