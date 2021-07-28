@@ -113,13 +113,13 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 
-alias copiarDesarrollo="cp /Users/felipemancillareyes/Dockers/config.php /Users/felipemancillareyes/Dockers/base/sistemaunico/webdir"
-alias copiarQA="cp /Users/felipemancillareyes/Dockers/config_qa.php /Users/felipemancillareyes/Dockers/base/sistemaunico/webdir"
-alias copiarRelease="cp /Users/felipemancillareyes/Dockers/config_conrelease.php /Users/felipemancillareyes/Dockers/base/sistemaunico/webdir"
-alias indapDockerForzado="cd /Users/felipemancillareyes/Dockers/base && docker-compose up --force-recreate -d"
-alias indapLog="cd /Users/felipemancillareyes/Dockers/base && tail -f -n 100 logs/*"
-alias indapIniciarDocker="docker start base_web_1 base_vsftpd_1"
-alias indapDetenerDocker="docker stop base_web_1 base_vsftpd_1"
+# Para Bruna AltumLab
+
+alias brumaDown="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-down.sh"
+alias brumaUp="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-up.sh"
+alias brumaBuild="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-build.sh"
+alias brumaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
+alias brumaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
