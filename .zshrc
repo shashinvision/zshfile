@@ -117,14 +117,14 @@ export TERM=xterm-256color
 
 # Para Bruna AltumLab
 
-alias brumaCleanCacheConfig="cd ~/Dockers/BrunaPOCsV2/app && php artisan cache:clear && php artisan config:clear"
-alias brumaGoContenedor="cd ~/Dockers/BrunaPOCsV2/ && ./bin/go-to-workspace.sh"
-alias brumaDown="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-down.sh"
-alias brumaUp="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-up.sh"
-alias brumaBuild="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-build.sh"
-alias brumaPs="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-ps.sh"
-alias brumaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
-alias brumaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
+alias brunaCleanCacheConfig="cd ~/Dockers/BrunaPOCsV2/app && php artisan cache:clear && php artisan config:clear"
+alias brunaGoContenedor="cd ~/Dockers/BrunaPOCsV2/ && ./bin/go-to-workspace.sh"
+alias brunaDown="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-down.sh"
+alias brunaUp="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-up.sh"
+alias brunaBuild="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-build.sh"
+alias brunaPs="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-ps.sh"
+alias brunaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
+alias brunaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
