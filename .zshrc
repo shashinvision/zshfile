@@ -126,6 +126,9 @@ alias brunaPs="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-ps.sh"
 alias brunaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
 alias brunaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
 
+# Solo para Mac brew install ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /Users/felipemancillareyes/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
