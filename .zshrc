@@ -134,5 +134,18 @@ alias brunaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs
 source /Users/felipemancillareyes/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /Users/felipemancillareyes/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# tat: tmux attach
+function tat {
+  name=$(basename `pwd` | sed -e 's/\.//g')
+
+  if tmux ls 2>&1 | grep "$name"; then
+    tmux attach -t "$name"
+  elif [ -f .envrc ]; then
+    direnv exec / tmux new-session -s "$name"
+  else
+    tmux new-session -s "$name"
+  fi
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
