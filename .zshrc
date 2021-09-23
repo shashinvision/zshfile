@@ -125,6 +125,7 @@ alias brunaBuild="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-build.sh"
 alias brunaPs="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-ps.sh"
 alias brunaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
 alias brunaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
+" El archivo _rsa debe tener permisos 400 para ser seguro
 alias brunaAws="ssh -i '~/Insync/felipei.mancilla@gmail.com/Google Drive/AltumLab/keys/felipe_rsa' ubuntu@ec2-18-236-207-9.us-west-2.compute.amazonaws.com"
 
 
