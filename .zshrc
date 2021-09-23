@@ -125,6 +125,8 @@ alias brunaBuild="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-build.sh"
 alias brunaPs="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-ps.sh"
 alias brunaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
 alias brunaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
+alias brunaAws="ssh -i ~/Insync/felipei.mancilla@gmail.com/Google Drive/AltumLab/keys/felipe_rsa ubuntu@ec2-18-236-207-9.us-west-2.compute.amazonaws.com"
+
 
 # Solo para Mac brew install ctags
 " alias ctags="`brew --prefix`/bin/ctags"
