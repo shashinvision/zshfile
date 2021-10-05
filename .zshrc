@@ -126,11 +126,10 @@ alias brunaPs="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-ps.sh"
 alias brunaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
 alias brunaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
 # El archivo _rsa debe tener permisos 400 para ser seguro
-alias brunaAws="ssh -i '~/Insync/felipei.mancilla@gmail.com/Google Drive/AltumLab/keys/felipe_rsa' ubuntu@ec2-18-236-207-9.us-west-2.compute.amazonaws.com"
-
-
+alias brunaAwsQa="ssh -i '~/Insync/felipei.mancilla@gmail.com/Google Drive/AltumLab/keys/felipe_rsa' ubuntu@ec2-18-236-207-9.us-west-2.compute.amazonaws.com"
+alias brunaAwsRelease="ssh -i '~/Insync/felipei.mancilla@gmail.com/Google Drive/AltumLab/keys/felipe_rsa' ubuntu@ec2-34-216-57-80.us-west-2.compute.amazonaws.com"
 # Solo para Mac brew install ctags
-" alias ctags="`brew --prefix`/bin/ctags"
+# alias ctags="`brew --prefix`/bin/ctags"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
