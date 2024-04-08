@@ -149,5 +149,10 @@ function tat {
   fi
 }
 
+# For Kitty Terminal 
+if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+  tmux attach || exec tmux new-session && exit;
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
