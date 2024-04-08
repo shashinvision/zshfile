@@ -149,7 +149,7 @@ function tat {
   fi
 }
 
-# For Kitty Terminal 
+# For Kitty Terminal Linux
 if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
   tmux attach || exec tmux new-session && exit;
 fi
