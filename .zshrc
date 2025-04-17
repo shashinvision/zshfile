@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/felipemancillareyes/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -31,14 +31,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -53,8 +52,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -78,7 +78,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git zsh-autosuggestions)
+#plugins=(git)
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -108,37 +108,56 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias startMongo="brew services start mongodb-community@5.0"
+alias stopMongo="brew services stop mongodb-community@5.0"
+alias v="nvim"
 
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US.UTF-8"
-export LANGUAGE="en_US.UTF-8"
-
-export TERM=xterm-256color
-
-# Para Bruna AltumLab
-
-alias brunaCleanCacheConfig="cd ~/Dockers/BrunaPOCsV2/app && php artisan cache:clear && php artisan config:clear"
-alias brunaGoContenedor="cd ~/Dockers/BrunaPOCsV2/ && ./bin/go-to-workspace.sh"
-alias brunaDown="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-down.sh"
-alias brunaUp="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-up.sh"
-alias brunaBuild="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-build.sh"
-alias brunaPs="cd ~/Dockers/BrunaPOCsV2/ && ./bin/compose-ps.sh"
-alias brunaLog="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/*"
-alias brunaLogError="cd ~/Dockers/BrunaPOCsV2/app/storage/ && tail -f -n100 logs/* | grep exception"
-# El archivo _rsa debe tener permisos 400 para ser seguro
-alias brunaAwsQa="ssh -i '~/Insync/felipei.mancilla@gmail.com/Google Drive/AltumLab/keys/felipe_rsa' ubuntu@ec2-18-236-207-9.us-west-2.compute.amazonaws.com"
-alias brunaAwsRelease="ssh -i '~/Insync/felipei.mancilla@gmail.com/Google Drive/AltumLab/keys/felipe_rsa' ubuntu@ec2-34-216-57-80.us-west-2.compute.amazonaws.com"
-# Solo para Mac brew install ctags
-# alias ctags="`brew --prefix`/bin/ctags"
+alias startSonar="/opt/sonarqube/bin/macosx-universal-64/sonar.sh start"
+alias startScanner="/Users/felipemancillareyes/.dotnet/tools/dotnet-sonarscanner start"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /Users/felipemancillareyes/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/felipemancillareyes/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# tat: tmux attach
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 function tat {
   name=$(basename `pwd` | sed -e 's/\.//g')
+   if tmux ls 2>&1 | grep "$name"; then
+     tmux attach -t "$name"
+   elif [ -f .envrc ]; then
+     direnv exec / tmux new-session -s "$name"
+   else
+     tmux new-session -s "$name"
+   fi
+ }
+# Custum
+TERM=xterm-256color
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# tat: tmux attach
+
+function tat {
+  name=$(basename "$(pwd)" | sed -e 's/\.//g')
 
   if tmux ls 2>&1 | grep "$name"; then
     tmux attach -t "$name"
@@ -149,10 +168,13 @@ function tat {
   fi
 }
 
-# For Kitty Terminal Linux
-if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
-  tmux attach || exec tmux new-session && exit;
+# Ensure tmux loads full shell environment
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  export PATH="$PATH:/opt/homebrew/bin"
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+
+
+scroll-and-clear-screen() {
+    printf '\n%.0s' {1..$LINES}
+    zle clear-screen
