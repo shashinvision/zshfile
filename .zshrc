@@ -122,16 +122,18 @@ alias t="tmux attach -t 0 || tmux -u"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# function tat {
-#   name=$(basename `pwd` | sed -e 's/\.//g')
-#    if tmux ls 2>&1 | grep "$name"; then
-#      tmux attach -t "$name"
-#    elif [ -f .envrc ]; then
-#      direnv exec / tmux new-session -s "$name"
-#    else
-#      tmux new-session -s "$name"
-#    fi
-#  }
+
+function tat {
+  name=$(basename `pwd` | sed -e 's/\.//g')
+  if tmux ls 2>&1 | grep "$name"; then
+    tmux attach -t "$name"
+  elif [ -f .envrc ]; then
+    direnv exec / tmux new-session -s "$name"
+  else
+    tmux new-session -s "$name"
+  fi
+}
+
 # Custum
 TERM=xterm-256color
 export LC_CTYPE=en_US.UTF-8
@@ -154,22 +156,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
-# tat: tmux attach
-
-# function tat {
-#   name=$(basename "$(pwd)" | sed -e 's/\.//g')
-#
-#   if tmux ls 2>&1 | grep "$name"; then
-#     tmux attach -t "$name"
-#   elif [ -f .envrc ]; then
-#     direnv exec / tmux new-session -s "$name"
-#   else
-#     tmux new-session -s "$name"
-#   fi
-# }
-
 
 
 # Tmux autostart
