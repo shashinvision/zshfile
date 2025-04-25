@@ -187,3 +187,4 @@ fi
 
 # Created by `pipx` on 2025-04-25 12:17:15
 export PATH="$PATH:/home/felipe/.local/bin"
+export PATH="$PATH:/home/felipe/.cargo/bin"
