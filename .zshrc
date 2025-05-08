@@ -117,6 +117,8 @@ alias startSonar="/opt/sonarqube/bin/macosx-universal-64/sonar.sh start"
 alias startScanner="/Users/felipemancillareyes/.dotnet/tools/dotnet-sonarscanner start"
 alias ia="sc"
 alias t="tmux attach -t 0 || tmux -u"
+alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
+alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -184,3 +186,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
+
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
