@@ -109,6 +109,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
+export PROJECT_PATHS="~/code/"
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exlude .git"
+
 alias startMongo="brew services start mongodb-community@5.0"
 alias stopMongo="brew services stop mongodb-community@5.0"
 alias v="nvim"
@@ -187,5 +193,12 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+WM_VAR="/$TMUX"
+# change with ZELLIJ
+WM_CMD="tmux"
+# change with zellij
+
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
