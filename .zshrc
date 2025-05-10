@@ -49,6 +49,7 @@ alias t="tmux attach -t 0 || tmux -u"
 alias fd='fd=fdfind'
 alias fzfp='fzf --preview="batcat --theme=gruvbox-dark --color=always {}"'
 alias fzfv='nvim $(fzf --preview="batcat --theme=gruvbox-dark --color=always {}")'
+alias fzfcd='cd "$(fdfind --type d --hidden --exclude .git | fzf --preview="tree -C {} | head -100")"'
 
 # ======================
 # Functions
