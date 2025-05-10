@@ -82,3 +82,4 @@ unset __conda_setup
 # Load Angular CLI autocompletion
 source <(ng completion script)
 
+. "$HOME/.atuin/bin/env"
