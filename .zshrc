@@ -25,7 +25,7 @@ alias t="tmux attach -t 0 || tmux -u"
 alias ia="sc"
 alias fzfp='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
 alias fzfv='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
-alias fzfcd='cd "$(fdfind --type d --hidden --exclude .git | fzf --preview="tree -C {} | head -100")"'
+alias fzfcd='cd "$(fd --type d --hidden --exclude .git | fzf --preview="tree -C {} | head -100")"'
 alias startMongo="brew services start mongodb-community@5.0"
 alias stopMongo="brew services stop mongodb-community@5.0"
 alias startSonar="/opt/sonarqube/bin/macosx-universal-64/sonar.sh start"
