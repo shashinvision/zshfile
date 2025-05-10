@@ -48,6 +48,7 @@ alias ia="sc"
 alias t="tmux attach -t 0 || tmux -u"
 alias fzfp='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
 alias fzfv='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
+alias fd='fd=fdfind'
 
 # ======================
 # Functions
