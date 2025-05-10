@@ -32,9 +32,9 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export PROJECT_PATHS="~/code/"
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_ALT_C_COMMAND="fdfind --type=d --hidden --strip-cwd-prefix --exclude .git"
 
 # ======================
 # Aliases
@@ -46,9 +46,9 @@ alias startSonar="/opt/sonarqube/bin/macosx-universal-64/sonar.sh start"
 alias startScanner="/Users/felipemancillareyes/.dotnet/tools/dotnet-sonarscanner start"
 alias ia="sc"
 alias t="tmux attach -t 0 || tmux -u"
-alias fzfp='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
-alias fzfv='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
 alias fd='fd=fdfind'
+alias fzfp='fzf --preview="batcat --theme=gruvbox-dark --color=always {}"'
+alias fzfv='nvim $(fzf --preview="batcat --theme=gruvbox-dark --color=always {}")'
 
 # ======================
 # Functions
