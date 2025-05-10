@@ -193,3 +193,4 @@ export PATH="$PATH:/home/felipe/.cargo/bin"
 # export DOTNET_ROOT=$HOME/omnisharp-roslyn/.dotnet
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$HOME/.dotnet:$PATH
+export DOTNET_ROLL_FORWARD=Major
