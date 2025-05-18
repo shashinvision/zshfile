@@ -31,6 +31,12 @@ alias stopMongo="brew services stop mongodb-community@5.0"
 alias startSonar="/opt/sonarqube/bin/macosx-universal-64/sonar.sh start"
 alias startScanner="$HOME/.dotnet/tools/dotnet-sonarscanner start"
 
+# navigation
+cx() { cd "$@" && l; }
+fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" && l; }
+f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
+fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
+
 # Git
 alias gc="git commit -m"
 alias gca="git commit -a -m"
