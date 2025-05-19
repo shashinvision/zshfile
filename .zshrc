@@ -54,6 +54,7 @@ alias ga='git add -p'
 alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
+alias grc='git rm -r --cached . && git add . && git commit -m "git cache cleared" && git push'
 
 # Docker
 alias dco="docker compose"
