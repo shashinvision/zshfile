@@ -18,6 +18,7 @@ export PROJECT_PATHS="~/code/"
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export WEBHOOK_URL="https://b16f-2803-c180-2100-a7d1-142d-fe82-38eb-9ab7.ngrok-free.app"
 
 # Aliases
 alias v="nvim"
@@ -132,3 +133,6 @@ source <(ng completion script)
 
 # Powerlevel10k configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/Users/felipemancillareyes/.lmstudio/bin"
