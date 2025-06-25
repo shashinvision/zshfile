@@ -19,7 +19,7 @@ export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 # N8N Variables
-export WEBHOOK_URL="https://b16f-2803-c180-2100-a7d1-142d-fe82-38eb-9ab7.ngrok-free.app"
+# export WEBHOOK_URL="https://b16f-2803-c180-2100-a7d1-142d-fe82-38eb-9ab7.ngrok-free.app"
 
 # Aliases
 alias v="nvim"
@@ -32,6 +32,7 @@ alias startMongo="brew services start mongodb-community@5.0"
 alias stopMongo="brew services stop mongodb-community@5.0"
 alias startSonar="/opt/sonarqube/bin/macosx-universal-64/sonar.sh start"
 alias startScanner="$HOME/.dotnet/tools/dotnet-sonarscanner start"
+alias btop="bpytop"
 
 # navigation
 cx() { cd "$@" && l; }
@@ -137,3 +138,5 @@ source <(ng completion script)
 
 # Added by LM Studio CLI tool (lms)
 export PATH="$PATH:/Users/felipemancillareyes/.lmstudio/bin"
+
+. "$HOME/.local/bin/env"
