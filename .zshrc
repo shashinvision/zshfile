@@ -33,7 +33,7 @@ alias startMongo="brew services start mongodb-community@5.0"
 alias stopMongo="brew services stop mongodb-community@5.0"
 alias startSonar="/opt/sonarqube/bin/macosx-universal-64/sonar.sh start"
 alias startScanner="$HOME/.dotnet/tools/dotnet-sonarscanner start"
-alias btop="bpytop"
+alias ptop="bpytop"
 
 # navigation
 cx() { cd "$@" && l; }
