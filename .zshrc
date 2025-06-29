@@ -19,6 +19,7 @@ export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 export PATH="$HOME/.cargo/bin:$PATH"
+export N8N_RUNNERS_ENABLED=true
 # N8N Variables
 # export WEBHOOK_URL="https://b16f-2803-c180-2100-a7d1-142d-fe82-38eb-9ab7.ngrok-free.app"
 
@@ -34,6 +35,7 @@ alias stopMongo="brew services stop mongodb-community@5.0"
 alias startSonar="/opt/sonarqube/bin/macosx-universal-64/sonar.sh start"
 alias startScanner="$HOME/.dotnet/tools/dotnet-sonarscanner start"
 alias ptop="bpytop"
+alias matrix="cmatrix"
 
 # navigation
 cx() { cd "$@" && l; }
@@ -141,3 +143,8 @@ source <(ng completion script)
 export PATH="$PATH:/Users/felipemancillareyes/.lmstudio/bin"
 
 . "$HOME/.local/bin/env"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/felipemancillareyes/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
