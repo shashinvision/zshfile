@@ -19,8 +19,8 @@ export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 export PATH="$HOME/.cargo/bin:$PATH"
-export N8N_RUNNERS_ENABLED=true
 # N8N Variables
+export N8N_RUNNERS_ENABLED=true
 # export WEBHOOK_URL="https://b16f-2803-c180-2100-a7d1-142d-fe82-38eb-9ab7.ngrok-free.app"
 
 # Aliases
