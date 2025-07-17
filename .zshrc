@@ -21,7 +21,9 @@ export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git
 export PATH="$HOME/.cargo/bin:$PATH"
 # N8N Variables
 export N8N_RUNNERS_ENABLED=true
-# export WEBHOOK_URL="https://b16f-2803-c180-2100-a7d1-142d-fe82-38eb-9ab7.ngrok-free.app"
+export WEBHOOK_UR="127.0.0.1"
+export OLLAMA_HOST=0.0.0.0:11434
+# export WEBHOOK_URL="https://be62-2803-c180-2100-a7d1-848f-e58b-cf3b-f071.ngrok-free.app"
 
 # Aliases
 alias v="nvim"
