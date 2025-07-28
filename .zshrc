@@ -25,6 +25,11 @@ export WEBHOOK_URL="127.0.0.1"
 export OLLAMA_HOST=0.0.0.0:11434
 # export WEBHOOK_URL="https://be62-2803-c180-2100-a7d1-848f-e58b-cf3b-f071.ngrok-free.app"
 
+# React Native 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # Aliases
 alias v="nvim"
 alias t="tmux attach -t 0 || tmux -u"
